@@ -52,7 +52,7 @@ FROM `my-project`
 SELECT PARSE_DATE('%d.%m.%Y',  collname),
 FROM `my-project`
 ------DATE SUBSTRACTION also (year, quarter,month,dayofyear,day,week,hour,minute,second)
-SELECT *, DATE_DIFF(end.time,start.time,day) 
+SELECT  DATE_DIFF(end.time,start.time,day) 
 FROM `my-project`` 
 
 
