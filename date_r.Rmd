@@ -1,0 +1,50 @@
+---
+title: "Manipulate with date"
+output: github_document
+---
+
+## Download csv
+```{r}
+library(readr)
+table_ex <- read_csv("/Users/natalia/Downloads/Divvy_Trips_2020_Q1 2.csv")
+View(table_ex)
+```
+## Install packages
+```{r}
+install.packages("tidyverse")
+install.packages("lubridate")
+install.packages("timeperiodsR")
+install.packages("dplyr")
+library(tidyverse)
+library(lubridate)
+library(timeperiodsR)
+library(dplyr)
+```
+## Convert string to date
+```{r}
+table_ex$started_at <- as.Date(table_ex$started_at)
+table_ex$ended_at <-as.Date(table_ex$ended_at)
+View(table_ex)
+## as.Date=as_date
+## as_datetime 
+
+```
+## Extract date in month 
+```{r}
+table_ex$ended_at<- month(table_ex$ended_at, label=TRUE)
+View(table_ex)
+
+```
+## DATE SUBSTRACTION 
+
+```{r}
+start.Date<- as.Date(table_ex$started_at)
+end.Date<-as.Date(table_ex$ended_at)
+ new_bike %>% 
+ mutate(table_ex, difftime= end.Date - start.Date) %>% 
+ 
+```
+## EXSPORT DATA
+```{r}
+write.csv(new_bike, "newbike.csv")
+```
